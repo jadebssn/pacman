@@ -1,8 +1,10 @@
 'use strict';
 
 console.log('it works!');
+const pacman = new Pacman(0,0)
+pacman.mount()
 
-const pacman = document.querySelector('.entity--pac');
+// const pacman = document.querySelector('.entity--pac');
 
 
 // document.addEventListener('click', () => {
@@ -10,26 +12,14 @@ const pacman = document.querySelector('.entity--pac');
 //     pacman.classList.toggle('pacboy--close-mouse')
 
 // })
-pacman.style.left = '0px';
+// pacman.style.left = '0px';
 let currentPositionX = 0;
 document.addEventListener('keydown', (event) => {
   if(event.code === 'ArrowRight') {
-    pacman.classList.toggle('pacboy--close-mouse')
-   
-    currentPositionX++
-     pacman.style.left = `${currentPositionX * 85}px`;
-     
+    pacman.moveRight()  
+  } else if (event.code === 'ArrowLeft') {
+pacman.moveLeft()
   }
+pacman.update()
 });
 
-
-// const xpos = document.querySelector('pacboy--close-mouse');
-// xpos = 0;
-
-
-
-// document.addEventListener('keydown', (event) => {
-//   if(event.code === 'ArrowRight') {
-//     console.log(xpos + 85 + 'px')
-//   }
-// });
