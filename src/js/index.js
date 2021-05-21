@@ -10,16 +10,22 @@ const pacman = document.querySelector('.entity--pac');
 //     pacman.classList.toggle('pacboy--close-mouse')
 
 // })
-
+pacman.style.left = '0px';
+let currentPositionX = 0;
 document.addEventListener('keydown', (event) => {
   if(event.code === 'ArrowRight') {
     pacman.classList.toggle('pacboy--close-mouse')
+   
+    currentPositionX++
+     pacman.style.left = `${currentPositionX * 85}px`;
+     
   }
 });
 
+
 // const xpos = document.querySelector('pacboy--close-mouse');
 // xpos = 0;
-document.querySelector('pacboy--close-mouse').style.left = "85px";
+
 
 
 // document.addEventListener('keydown', (event) => {
